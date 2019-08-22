@@ -6,23 +6,23 @@ import (
 )
 
 type Group struct {
-	PrimaryProductID     *string
-	AssociatedProductIDs []*string
-	CreatedAt            *string
+	PrimaryProductID *string
+	Associations     []*Association
+	CreatedAt        *string
 }
 
 type Association struct {
-	ProductId *string
-	Product   *products.Product
-	Ratio     *float
+	Product *products.Product
+	Ratio   *float
 }
 
-func NewGroup(primaryProductID *string, associatedProductIDs []*string) (*Group, error) {
+func NewGroup(primaryProductID *string, associations []*Association) (*Group, error) {
 	createdAt := time.Now().Format(time.RFC3339)
 
 	return &Group{
-		AssociatedProductIDs: associatedProductIDs,
-		CreatedAt:            &createdAt,
+		PrimaryProductID: primaryProductID,
+		Associations:     associations,
+		CreatedAt:        &createdAt,
 	}, nil
 }
 
