@@ -6,11 +6,11 @@ import (
 
 type Group struct {
 	PrimaryProductID     *string
-	AssociatedProductIDs *[]string
+	AssociatedProductIDs []*string
 	CreatedAt            *string
 }
 
-func NewGroup(primaryProductID *string, associatedProductIDs *[]string) (*Group, error) {
+func NewGroup(primaryProductID *string, associatedProductIDs []*string) (*Group, error) {
 	createdAt := time.Now().Format(time.RFC3339)
 
 	return &Group{
