@@ -1,17 +1,13 @@
 package groups
 
-import (
-	"github.com/alejo-lapix/products-go/pkg/products"
-)
-
 type Group struct {
 	PrimaryProductID *string
 	Associations     []*Association
 }
 
 type Association struct {
-	Product *products.Product
-	Ratio   *float64
+	ProductID *string
+	Ratio     *float64
 }
 
 func NewGroup(primaryProductID *string, associations []*Association) (*Group, error) {
