@@ -1,13 +1,13 @@
 package groups
 
 type Group struct {
-	PrimaryProductID *string
-	Associations     []*Association
+	PrimaryProductID *string        `json:"primaryProductId"`
+	Associations     []*Association `json:"associations"`
 }
 
 type Association struct {
-	ProductID *string
-	Ratio     *float64
+	ProductID *string  `json:"productId"`
+	Ratio     *float64 `json:"ratio"`
 }
 
 func NewGroup(primaryProductID *string, associations []*Association) (*Group, error) {
