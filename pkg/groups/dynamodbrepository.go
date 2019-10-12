@@ -11,7 +11,7 @@ type DynamoDBGroupRepository struct {
 	tableName *string
 }
 
-func NewDynamoDBProductRepository(db *dynamodb.DynamoDB) *DynamoDBGroupRepository {
+func NewDynamoDBGroupRepository(db *dynamodb.DynamoDB) *DynamoDBGroupRepository {
 	return &DynamoDBGroupRepository{
 		DynamoDB:  db,
 		tableName: aws.String("groups"),
